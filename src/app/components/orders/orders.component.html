@@ -1,0 +1,427 @@
+<app-navbar></app-navbar>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><strong>Orders</strong></h1>
+    <p class="lead"><strong>Here you can manage all the orders</strong></p>
+  </div>
+</div>
+
+<div class="button">
+  <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#add">
+    Add Order
+  </button>
+</div>
+
+<div class="dropdown d-grid gap-2 d-md-flex justify-content-md-end me-4">
+
+  <div class="me-5">
+    <form class="d-flex">
+      <input class="form-control btn-sm" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-dark btn-sm" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+
+  <button class="btn btn-outline-dark btn-sm dropdown-toggle me-5 ms-5" type="button" id="dropdownMenuButton1"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-filter"></i> Sort by
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item"><i class="bi bi-sort-alpha-down"></i>A to Z</a></li>
+    <li><a class="dropdown-item"><i class="bi bi-sort-alpha-up"></i>Z to A</a></li>
+    <li><a class="dropdown-item"><i class="bi bi-sort-up"></i>Price : Low to High</a></li>
+    <li><a class="dropdown-item"><i class="bi bi-sort-down"></i>Price : High to Low</a></li>
+  </ul>
+
+  <button class="btn btn-outline-dark btn-sm dropdown-toggle ms-5 me-2" type="button" id="dropdownMenuButton1"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-funnel"></i> Filter
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item">Recent</a></li>
+    <li><a class="dropdown-item">This Week</a></li>
+    <li><a class="dropdown-item">Last Week</a></li>
+    <li><a class="dropdown-item">This Month</a></li>
+    <li><a class="dropdown-item">Last Month</a></li>
+    <li><a class="dropdown-item">Choose Date
+      </a></li>
+  </ul>
+</div>
+
+
+<div class="table-responsive mt-3">
+  <table class="table table-light table table-responsive table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>GST</th>
+        <th>Total Price</th>
+        <th>Address</th>
+
+        
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody class="align-middle">
+      <tr>
+        <td>1</td>
+        <td>Clark</td>
+        <td>Clarkkent@gmail.com</td>
+        <td>Apple iPhone</td>
+        <td>3</td>
+        <td>15%</td>
+        <td>$899</td>
+        <td>
+          <button type="button" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#detail">
+           Detail
+          </button>
+        </td>
+        
+        <td class="table-success">Paid</td>
+        <td>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#edit">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete">
+            <i class="bi bi-trash"></i>
+          </button>
+          <button type="button" class="btn" routerLink="/invoice">
+            <i class="bi bi-receipt"></i>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Siddiqui Hozaifa</td>
+        <td>sidhuzaifa3088@gmail.com</td>
+        <td>Apple iPhone</td>
+        <td>3</td>
+        <td>15%</td>
+        <td>$899</td>
+        <td>Address Details</td>
+
+        
+        <td class="table-danger">Unpaid</td>
+        <td>
+          <button type="button" class="btn">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button type="button" class="btn"><i class="bi bi-trash"></i></button>
+          <button type="button" class="btn">
+            <i class="bi bi-receipt"></i>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Clark</td>
+        <td>WhyAmIDoingThis@fml.com</td>
+        <td>Apple iPhone</td>
+        <td>3</td>
+        <td>15%</td>
+        <td>$899</td>
+        <td>Address Details</td>
+
+        
+        <td class="table-info">Partial</td>
+        <td>
+          <button type="button" class="btn">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button type="button" class="btn"><i class="bi bi-trash"></i></button>
+          <button type="button" class="btn">
+            <i class="bi bi-receipt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!--Add Modal -->
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="create">
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Name</label>
+                <input placeholder="Enter Name" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">GST</label>
+                <input placeholder="GST" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <!-- Text input -->
+          <div class="row ">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Email</label>
+                <input placeholder="Enter State" placeholder="Enter Email" type="text" id="form6Example1"
+                  class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Phone Number</label>
+                <input placeholder="Enter Contact Number" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <!-- Text input -->
+          <div class="row ">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Total Price</label>
+                <input placeholder="Enter Price" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Quantity</label>
+                <input placeholder="Quantity" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Product</label>
+                <input placeholder="Enter Product Name" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+  
+          </div>
+  
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example5">Address</label>
+            <input placeholder="Enter Address" type="email" id="form6Example5" class="form-control" />
+  
+          </div>
+  
+          <!-- Number input -->
+          <div class="form-outline ">
+            <label class="form-label" for="form6Example6">City</label>
+            <input placeholder="Enter City Name" type="number" id="form6Example6" class="form-control" />
+  
+          </div>
+  
+          <!-- Message input -->
+          <div class="row">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">State</label>
+                <input placeholder="Enter State" placeholder="Enter State" type="text" id="form6Example1"
+                  class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Pincode</label>
+                <input placeholder="Enter Pincode" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+  
+  
+          <!-- Submit button -->
+          <div class="modal-footer mb-4">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-success">Create</button>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--Delete Modal -->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            No
+          </button>
+          <button type="button" class="btn btn-success">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Add Modal -->
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="create">
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Name</label>
+                <input placeholder="Enter Name" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">GST</label>
+                <input placeholder="GST" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <!-- Text input -->
+          <div class="row ">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Email</label>
+                <input placeholder="Enter State" placeholder="Enter Email" type="text" id="form6Example1"
+                  class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Phone Number</label>
+                <input placeholder="Enter Contact Number" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <!-- Text input -->
+          <div class="row ">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Total Price</label>
+                <input placeholder="Enter Price" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Quantity</label>
+                <input placeholder="Quantity" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">Product</label>
+                <input placeholder="Enter Product Name" type="text" id="form6Example1" class="form-control" />
+  
+              </div>
+            </div>
+  
+          </div>
+  
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example5">Address</label>
+            <input placeholder="Enter Address" type="email" id="form6Example5" class="form-control" />
+  
+          </div>
+  
+          <!-- Number input -->
+          <div class="form-outline ">
+            <label class="form-label" for="form6Example6">City</label>
+            <input placeholder="Enter City Name" type="number" id="form6Example6" class="form-control" />
+  
+          </div>
+  
+          <!-- Message input -->
+          <div class="row">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example1">State</label>
+                <input placeholder="Enter State" placeholder="Enter State" type="text" id="form6Example1"
+                  class="form-control" />
+  
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example2">Pincode</label>
+                <input placeholder="Enter Pincode" type="text" id="form6Example2" class="form-control" />
+  
+              </div>
+            </div>
+          </div>
+  
+  
+  
+          <!-- Submit button -->
+          <div class="modal-footer mb-4">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-success">Create</button>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--address detail Modal -->
+  <div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="col-form-label-lg">
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+

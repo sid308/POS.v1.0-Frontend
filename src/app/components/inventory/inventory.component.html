@@ -1,0 +1,292 @@
+<app-navbar></app-navbar>
+
+<div class="button">
+    <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#add">
+        Create Inventory
+    </button>
+</div>
+
+<div class="dropdown d-grid gap-2 d-md-flex justify-content-md-end me-4">
+
+    <div class="me-5">
+        <form class="d-flex">
+            <input class="form-control btn-sm" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-dark btn-sm" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+
+    <button class="btn btn-outline-dark btn-sm dropdown-toggle me-5 ms-5" type="button" id="dropdownMenuButton1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-filter"></i> Sort by
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item"><i class="bi bi-sort-alpha-down"></i>A to Z</a></li>
+        <li><a class="dropdown-item"><i class="bi bi-sort-alpha-up"></i>Z to A</a></li>
+        <li><a class="dropdown-item"><i class="bi bi-sort-up"></i>Amount : Low to High</a></li>
+        <li><a class="dropdown-item"><i class="bi bi-sort-down"></i>Amount : High to Low</a></li>
+    </ul>
+
+    <button class="btn btn-outline-dark btn-sm dropdown-toggle ms-5 me-2" type="button" id="dropdownMenuButton1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-funnel"></i> Filter
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item">Warehouse Name</a></li>
+        <li><a class="dropdown-item">Recent</a></li>
+        <li><a class="dropdown-item">This Week</a></li>
+        <li><a class="dropdown-item">Last Week</a></li>
+        <li><a class="dropdown-item">This Month</a></li>
+        <li><a class="dropdown-item">Last Month</a></li>
+        <li><a class="dropdown-item">Choose Date
+            </a></li>
+    </ul>
+</div>
+
+
+
+<div class="table-responsive mt-3">
+    <table class="table table-light  table-striped table-hover table-sm table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Unit Price</th>
+                <th>Stock(kg/mtr)</th>
+                <th>Amount</th>
+                <th>Actions</th>
+                <th>Warehouse Name</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle tag">
+            <tr>
+                <td>1</td>
+                <td>xyz</td>
+                <td>xxx</td>
+                <td>200</td>
+                <td>xxxx</td>
+                <td>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#edit">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    <a routerLink="/warehouses"><button type="button" class="btn">
+                            <i class="bi bi-bank2"></i>
+                        </button></a>
+                </td>
+                <td>Warehouse1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>pqr</td>
+                <td>xxx</td>
+                <td>600</td>
+                <td>xxxx</td>
+                <td>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#edit">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#delete">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    <a routerLink="/warehouses"><button type="button" class="btn">
+                            <i class="bi bi-bank2"></i>
+                        </button></a>
+                </td>
+                <td>ware3</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>efg</td>
+                <td>xxx</td>
+                <td>300</td>
+                <td>xxxx</td>
+                <td>
+                    <button type="button" class="btn">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn"><i class="bi bi-trash"></i></button>
+                    <a routerLink="/warehouses"><button type="button" class="btn">
+                            <i class="bi bi-bank2"></i>
+                        </button></a>
+                </td>
+                <td>ware4</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>xuv</td>
+                <td>xxx</td>
+                <td>450</td>
+                <td>xxxx</td>
+                <td>
+                    <button type="button" class="btn">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn"><i class="bi bi-trash"></i></button>
+                    <a routerLink="/warehouses"><button type="button" class="btn">
+                            <i class="bi bi-bank2"></i>
+                        </button></a>
+                </td>
+                <td>ware2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>mno</td>
+                <td>xxx</td>
+                <td>500</td>
+                <td>xxxx</td>
+                <td>
+                    <button type="button" class="btn">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" class="btn"><i class="bi bi-trash"></i></button>
+                    <a routerLink="/warehouses"><button type="button" class="btn">
+                            <i class="bi bi-bank2"></i>
+                        </button></a>
+                </td>
+                <td>ware5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><strong>Total:</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>xxxx</strong></td>
+                <td><strong>xxxxx</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+
+<!-- Add Model -->
+<div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Inventory</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="create">
+                <!-- Name Input -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-outline mt-4">
+                            <label class="form-label" for="form6Example1">Name</label>
+                            <input placeholder="Enter Name" type="text" id="form6Example1" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="form-outline my-4">
+                    <label class="form-label" for="form6Example1">Unit Price</label>
+                    <input placeholder="Enter Cost" placeholder="Enter Unit Price" type="number" id="form6Example1"
+                        class="form-control" />
+                </div>
+
+                <div class="form-outline my-4">
+                    <label class="form-label" for="form6Example2">Stock in kg/mtr </label>
+                    <input placeholder="Enter Stock" type="number" id="form6Example2" class="form-control" />
+                </div>
+
+                <div class="form-outline my-4">
+                    <label class="form-label" for="form6Example2">Amount</label>
+                    <input placeholder="Enter Stock" type="number" id="form6Example2" class="form-control" />
+                </div>
+
+                <!-- Submit button -->
+                <div class="modal-footer mb-4">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-dark">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Stock Name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="create">
+                <!-- Name Input -->
+                <div class="row">
+                    <div class="col">
+                        <div class="form-outline mt-4">
+                            <label class="form-label" for="form6Example1">Name</label>
+                            <input placeholder="Enter Name" type="text" id="form6Example1" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input -->
+                <div class="form-outline my-4">
+                    <label class="form-label" for="form6Example1">Unit Price</label>
+                    <input placeholder="Enter Cost" placeholder="Enter Unit Price" type="number" id="form6Example1"
+                        class="form-control" />
+
+                </div>
+
+                <div class="form-outline my-4">
+                    <label class="form-label" for="form6Example2">Stock in kg/mtr </label>
+                    <input placeholder="Enter Stock" type="number" id="form6Example2" class="form-control" />
+
+                </div>
+
+                <!-- Submit button -->
+                <div class="modal-footer mb-4">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-dark">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Delete Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Inventory Name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to Delete this Inventory</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-dark">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
