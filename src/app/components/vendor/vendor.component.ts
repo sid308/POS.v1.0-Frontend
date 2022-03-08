@@ -12,14 +12,14 @@ export class VendorComponent implements OnInit {
   VendSingle: Vend[] | undefined;
   headers = ["ID", 'Name', 'Email', 'Phone Number', 'GST', 'Address', 'City', 'State', 'Pincode', 'Actions'];
 
-  Vname: string = '';
-  Vemail: string = '';
-  Vphone: string = '';
-  Vgst: string = '';
-  Vaddress: string = '';
-  Vcity: string = '';
-  Vstate: string = '';
-  Vpin_code: string = '';
+  Aname: string = '';
+  Aemail: string = '';
+  Aphone: string = '';
+  Agst: string = '';
+  Aaddress: string = '';
+  Acity: string = '';
+  Astate: string = '';
+  Apin_code: string = '';
 
   loading: boolean = false;
   errorMessage: any;
@@ -91,14 +91,14 @@ export class VendorComponent implements OnInit {
     this.loading = true;
     this.errorMessage = '';
     this.VendorService.postUserData(
-      this.Vname,
-      this.Vemail,
-      this.Vphone,
-      this.Vgst,
-      this.Vaddress,
-      this.Vcity,
-      this.Vstate,
-      this.Vpin_code
+      this.Aname,
+      this.Aemail,
+      this.Aphone,
+      this.Agst,
+      this.Aaddress,
+      this.Acity,
+      this.Astate,
+      this.Apin_code
     ).subscribe(
       (response) => {
         //next() callback
@@ -119,11 +119,11 @@ export class VendorComponent implements OnInit {
       }
     );
   }
-  public putvendor(vid: any) {
+  public putvendor(eid: any) {
     this.loading = true;
     this.errorMessage = '';
     this.VendorService.putUserData(
-      vid,
+      eid,
       this.VendorToUpdate.name,
       this.VendorToUpdate.email,
       this.VendorToUpdate.phone,
@@ -153,7 +153,7 @@ export class VendorComponent implements OnInit {
       (error) => {
         //error() callback
         console.error('Request failed with error');
-        console.log(vid);
+        console.log(eid);
         this.errorMessage = error;
         this.loading = false;
       },
@@ -164,10 +164,10 @@ export class VendorComponent implements OnInit {
       }
     );
   }
-  public deleteUser(Vuid: any) {
+  public deleteUser(Euid: any) {
     this.loading = true;
     this.errorMessage = '';
-    this.VendorService.deleteUserData(Vuid).subscribe(
+    this.VendorService.deleteUserData(Euid).subscribe(
       (response) => {
         //next() callback
         console.log('response send');
@@ -187,10 +187,10 @@ export class VendorComponent implements OnInit {
       }
     );
   }
-  public getSingleVendor(Vid: any) {
+  public getSingleVendor(Eid: any) {
     this.loading = true;
     this.errorMessage = '';
-    this.VendorService.getSingleVendor(Vid).subscribe(
+    this.VendorService.getSingleVendor(Eid).subscribe(
       (response) => {
         //next() callback
         console.log('response received');

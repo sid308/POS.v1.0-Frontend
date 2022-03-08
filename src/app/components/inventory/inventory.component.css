@@ -1,15 +1,15 @@
 .table {
-    width: 82%;
-    margin-top: 1%;
-    margin-left: 16%;
-  }
+  width: 82%;
+  margin-top: 1%;
+  margin-left: 16%;
+}
 .button {
-    margin-left: 16%;
+  margin-left: 16%;
 }
 .jumbotron {
-    margin-left: 15%;
-  
-    padding-right: 0px;
+  margin-left: 15%;
+
+  padding-right: 0px;
 }
 
 .modal-content {
